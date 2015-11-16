@@ -26,26 +26,26 @@ AppAsset::register($this);
     <div class="wrap">
         <?php
             NavBar::begin([
-                'brandLabel' => 'My Company',
+                'brandLabel' => Html::img('/img/logo-nav.png'),
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
-                    'class' => 'navbar-inverse navbar-fixed-top',
+                    'class' => 'navbar-default menu',
                 ],
             ]);
             
             $items = [
-                    ['label' => 'Home', 'url' => ['/site/index']],
-                    ['label' => 'About', 'url' => ['/site/about']],
-                    ['label' => 'Contact', 'url' => ['/site/contact']],
-                    ['label' => 'Books', 'url' => ['/book/index']],
+                    ['label' => Yii::t('app','Trang chủ'), 'url' => ['/site/index']],
+                    ['label' => Yii::t('app','Giới thiệu'), 'url' => ['/site/about']],
+                    ['label' => Yii::t('app','Liên hệ'), 'url' => ['/site/contact']],
+                    ['label' => Yii::t('app','Sách'), 'url' => ['/book/index']],
                     Yii::$app->user->isGuest ?
-                        ['label' => 'Login', 'url' => ['/site/login']] :
-                        ['label' => 'Logout (' . Yii::$app->user->identity->username . ')',
+                        ['label' => Yii::t('app','Đăng nhập'), 'url' => ['/site/login']] :
+                        ['label' => Yii::t('app','Đăng xuất').' (' . Yii::$app->user->identity->username . ')',
                             'url' => ['/site/logout'],
                             'linkOptions' => ['data-method' => 'post']],
                 ];
             if ( Yii::$app->user->can('permission_admin') ){
-                $items[] = ['label' => 'Permissions', 'url' => ['/admin/assignment']];
+                $items[] = ['label' => Yii::t('app','Phân quyền'), 'url' => ['/admin/assignment']];
             }
             echo Nav::widget([
                 'options' => ['class' => 'navbar-nav navbar-right'],
@@ -54,24 +54,24 @@ AppAsset::register($this);
             NavBar::end();
         ?>
         
-        <div>
-            <div  id="language-selector" class="pull-right" style="position: relative; top: 60px;">
-            <?= \app\components\widgets\LanguageSelector::widget(); ?>
-        </div>
-
-        <div class="container">
+        <div class="content">
             <?= Breadcrumbs::widget([
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             ]) ?>
             <?= $content ?>
         </div>
+        
     </div>
 
     <footer class="footer">
-        <div class="container">
-            <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
-            <p class="pull-right"><?= Yii::powered() ?></p>
-        </div>
+            <a class="pull-left" href="/" >
+                &copy; Ứng dụng toán <?= date('Y') ?>
+            </a>
+
+                
+            <div  id="language-selector" class="pull-right">
+                <?= \app\components\widgets\LanguageSelector::widget(); ?>
+            </div>
     </footer>
 
 <?php $this->endBody() ?>

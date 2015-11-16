@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\BookSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Books';
+$this->title = Yii::t('app','Sách');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="book-index">
@@ -27,7 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'title',
-            'description:ntext',
+            'description:html',
             'user_id',
             'isbn',
 

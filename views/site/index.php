@@ -1,52 +1,63 @@
 <?php
 use yii\helpers\Url;
 /* @var $this yii\web\View */
-$this->title = 'My Yii Application';
+$this->title = Yii::t('app','Giải toán trực tuyến');
+$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-index">
-
-    <div class="jumbotron">
-        <h1><?= Yii::t('app','Welcome') ?></h1>
-        
-        <p class="lead"><?=  Yii::$app->formatter->asDate('2015-01-15', 'long') ?></p>
-
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
-    </div>
-
-    <div class="body-content">
-
-        <div class="row">
-            <div class="col-lg-4">
-                <h2><?= Yii::t('app','Heading') ?></h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
+    <div class="body-header">
+        <div class="loaigiai">
+            <div class="btn-toolbar" role="toolbar" aria-label="...">
+                <div class="btn-group" role="group" aria-label="...">
+                    <button type="button" class="btn btn-default">
+                        <?= Yii::t('app', 'Hệ phương trình')?>
+                    </button>
+                </div>
+                <div class="btn-group" role="group" aria-label="...">
+                    <button type="button" class="btn btn-default">
+                        <?= Yii::t('app', 'Định thức')?>
+                    </button>
+                    <button type="button" class="btn btn-default">
+                        <?= Yii::t('app', 'Hạng')?>
+                    </button>
+                    <button type="button" class="btn btn-default">
+                        <?= Yii::t('app', 'Nghịch đảo')?>
+                    </button>
+                    <button type="button" class="btn btn-default">
+                        <?= Yii::t('app', 'Lũy thừa')?>
+                    </button>
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Dropdown link</a></li>
+                            <li><a href="#">Dropdown link</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
-
+    </div>
+    <div class="body-content">
+        <div class="row">
+            <div class="col-lg-6 khung">
+                <?= $this->render('/dinhkhung/dauvao')?>
+            </div>
+            <div class="col-lg-6 khung">
+                <?= $this->render('/dinhkhung/daura')?>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 khung">
+                <?= $this->render('/dinhkhung/lythuyet')?>
+            </div>
+            <div class="col-lg-6 khung">
+                <?= $this->render('/dinhkhung/thuattoan')?>
+            </div>
+        </div>
+      
     </div>
 </div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
