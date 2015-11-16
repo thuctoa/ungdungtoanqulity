@@ -18,18 +18,12 @@ class AppAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/bootstrap.min.css',
-        'bootstrap-modal-carousel/dist/css/bootstrap-modal-carousel.min.css',
         'css/site.css',
         'css/languages.min.css',
         'css/dinhkhung.css',
-        
     ];
     public $js = [
-        'js/bootstrap.min.js',
-        'bootstrap-modal-carousel/src/js/modal-local.js',
         'js/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
-        'js/jquery.min.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
