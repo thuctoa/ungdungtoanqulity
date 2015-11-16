@@ -1,6 +1,6 @@
 body{
     background: transparent;
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: arial,sans-serif!important;
 }
 .wrap{
     margin: 0px;
@@ -19,9 +19,8 @@ body{
     padding: 15px 0;
 }
 .navbar-default .navbar-nav>li>a {
-    //font-weight: bold;
-    color: black;
-    font-size: 10px;
+    color: #000;
+    font-size: 12px;
 }
 .navbar-default .navbar-nav>.active>a{
     color: black;
@@ -136,10 +135,13 @@ body{
 .modal-header{
 }
 .btn-group>.btn {
-    //border-radius: 2px;
-    font-size: 11px;
-    font-weight: bold;
-    //background-color: #f5f5f5;
+    border-radius: 2px;
+    font-size: 12px;
+   //font-weight: bold;
+   // background-color: #f5f5f5;
+    cursor: default;
+    outline: 0px;
+    color: #000;
 }
 .loaigiai{
     margin-left: 5px;
