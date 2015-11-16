@@ -3,27 +3,30 @@ $this->title = Yii::t('app','Ứng dụng toán');
 //$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-index">
+    
     <div class="body-header">
         <div class="loaigiai">
-            <div class="btn-toolbar" role="toolbar" aria-label="...">
-                <div class="btn-group" role="group" aria-label="...">
-                    <button type="button" class="btn btn-default">
-                        <?= Yii::t('app', 'Hệ phương trình')?>
-                    </button>
-                    <button type="button" class="btn btn-default">
-                        <?= Yii::t('app', 'Định thức')?>
-                    </button>
-                    <button type="button" class="btn btn-default">
+            <label class="radio-inline">
+                <input type="radio" name="optradio">
+                <?= Yii::t('app', 'Hệ phương trình')?>
+            </label>
+
+            <label class="radio-inline">
+                <input type="radio" name="optradio">
+                <?= Yii::t('app', 'Định thức')?>
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="optradio">
                         <?= Yii::t('app', 'Hạng')?>
-                    </button>
-                    <button type="button" class="btn btn-default">
-                        <?= Yii::t('app', 'Nghịch đảo')?>
-                    </button>
-                    <button type="button" class="btn btn-default">
-                        <?= Yii::t('app', 'Lũy thừa')?>
-                    </button>
-                </div>
-            </div>
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="optradio">
+                <?= Yii::t('app', 'Nghịch đảo')?>
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="optradio">
+                <?= Yii::t('app', 'Lũy thừa')?>
+            </label>
         </div>
     </div>
     <div class="body-content">

@@ -6,6 +6,7 @@
 </div>
 <div class="khung-dauvao">
     <div id="dauvao" >
+        sdfd
     </div>
     <div class="modal fade" id="fulldauvao" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog" >
