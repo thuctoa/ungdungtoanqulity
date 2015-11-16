@@ -41,12 +41,13 @@ body{
     margin-left: 15px;
 }
 .breadcrumb>.active{
-    color: #dd4b39;
+    
     font-weight: bold;
     margin-left: 5px;
 }
 .breadcrumb>li>a{
-    color: #ddd;
+    
+    color: #dd4b39;
     font-weight: bold;
 }
 .footer{
