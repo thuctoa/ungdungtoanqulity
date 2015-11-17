@@ -37,7 +37,7 @@ AppAsset::register($this);
                     ['label' => Yii::t('app','Trang chủ'), 'url' => ['/site/index']],
                     ['label' => Yii::t('app','Giới thiệu'), 'url' => ['/site/about']],
                     ['label' => Yii::t('app','Liên hệ'), 'url' => ['/site/contact']],
-                    ['label' => Yii::t('app','Sách'), 'url' => ['/book/index']],
+                  //  ['label' => Yii::t('app','Sách'), 'url' => ['/book/index']],
                     Yii::$app->user->isGuest ?
                         ['label' => Yii::t('app','Đăng nhập'), 'url' => ['/site/login']] :
                         ['label' => Yii::t('app','Đăng xuất').' (' . Yii::$app->user->identity->username . ')',
@@ -54,7 +54,10 @@ AppAsset::register($this);
             NavBar::end();
         ?>
         
-        <div class="content">
+        <div class="container">
+            <?= Breadcrumbs::widget([
+                'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+            ]) ?>
             <?= $content ?>
         </div>
         

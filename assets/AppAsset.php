@@ -24,6 +24,7 @@ class AppAsset extends AssetBundle
     ];
     public $js = [
         'js/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+        'js/chonloaigiai.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
