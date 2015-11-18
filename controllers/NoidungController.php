@@ -28,4 +28,14 @@ class NoidungController extends \yii\web\Controller
             'loai'=>$loai,
         ]);
     }
+    public function actionDauvao()
+    {
+        $loai = '';
+        if(isset($_GET['loai'])){
+            $loai=$_GET['loai'];
+        }
+        return $this->render('dauvao',[
+            'loai'=>$loai,
+        ]);
+    }
 }

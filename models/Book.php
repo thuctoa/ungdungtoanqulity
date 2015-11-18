@@ -34,7 +34,7 @@ class Book extends \yii\db\ActiveRecord
             [['title', 'description'], 'required'], 
             [['user_id'], 'integer'],
             [['title'], 'string', 'max' => 64],
-            [['description'], 'string', 'max' => 1024],
+            [['description'], 'string'],
             [['isbn'], 'string', 'max' => 32],
             [['user_id'], 'exist', 'targetClass'=>'\app\models\User', 'targetAttribute'=>'id', 'message'=>Yii::t('app','This user doesn\'t exist')],
         ];

@@ -8,12 +8,12 @@ $this->title = Yii::t('app','Ứng dụng toán');
     <div class="body-header">
         <div class="loaigiai">
             <label class="radio-inline"  >
-                <input type="radio" name="optradio" onclick="chonloaigiai('1');" >
+                <input type="radio" name="optradio" onclick="chonloaigiai('0');" >
                 <?= Yii::t('app', 'Hệ phương trình')?>
             </label>
 
             <label class="radio-inline" >
-                <input type="radio" name="optradio" onclick="chonloaigiai('0');"  >
+                <input type="radio" name="optradio" onclick="chonloaigiai('1');"  >
                 <?= Yii::t('app', 'Định thức')?>
             </label>
             <label class="radio-inline" >

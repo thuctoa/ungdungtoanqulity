@@ -16,8 +16,10 @@ use app\models\User;
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => 64]) ?>
 
-    <?= $form->field($model, 'description')->textInput(['maxlength' => 1024]) ?>
-
+    <?= $form->field($model, 'description')->textInput() ?>
+    
+    <?= $form->field($model, 'isbn')->textInput(['maxlength' => 32]) ?>
+    
     <?= $form->field($model, 'user_id')->dropDownList(ArrayHelper::map(User::find()->select(['username','id'])->all(), 'id', 'username'),['class' => 'form-control inline-block']); ?>
 
     <div class="form-group">

@@ -2,10 +2,22 @@ MathJax.Hub.Config({
     tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
 });
 function chonloaigiai(loai){
-    
+    document.getElementById('khoi_tao').style.display="block";
+    document.getElementById('nut_giai').style.display="none";
+    huongdan(loai,'dauvao');
     huongdan(loai,'lythuyet');
     huongdan(loai,'thuattoan');
     MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+}
+function giai_matran(){
+    var m = document.getElementById('m').value;
+    var n = document.getElementById('n').value;
+    var loai = document.getElementById('loai').value;
+    console.log('m = '+ m + '; n = '+ n + '; loai = '+loai);
+    if(m>0&&n>0){
+        document.getElementById('khoi_tao').style.display="none";
+        document.getElementById('nut_giai').style.display="block";
+    }
 }
 function huongdan(loai, hinhthuc){
     var xmlhttp;
@@ -22,7 +34,7 @@ function huongdan(loai, hinhthuc){
                 var start = daura.indexOf(hinhthuc);
                 var end = daura.indexOf('footer');
                 document.getElementById(hinhthuc).innerHTML
-                = daura.substring(start+12,end-1);
+                = daura.substring(start+hinhthuc.length + 2 ,end-1);
             }else{
                 document.getElementById(hinhthuc).innerHTML='loi roi';
             }
@@ -34,4 +46,18 @@ function huongdan(loai, hinhthuc){
     xmlhttp.open("GET","/noidung/"+ hinhthuc +"?loai="
             +loai, false);
     xmlhttp.send();
+}
+function borderbottom(khung){
+    var elmnt = document.getElementById(khung);
+    if(elmnt.scrollTop>0){
+        elmnt.style.borderTop="1px solid #ddd";
+       
+    }else{
+        elmnt.style.borderTop="none";
+    }
+    if(elmnt.scrollTop < elmnt.scrollHeight - elmnt.clientHeight - 1 ){
+        elmnt.style.borderBottom="1px solid #ddd";
+    }else{
+        elmnt.style.borderBottom="none";
+    }
 }
